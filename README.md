@@ -19,10 +19,11 @@ Back-end requirements (Rails):
 [ ] Multiple has_many_through relationships
 
 [ ] Custom routes 
-
+<!-- custom route for Auth authorize ation -->
 [ ] Custom controller/model methods
-
+<!--  -->
 [ ] Validations
+<!-- add validations to auth -->
 
  Front-end requirements (React):
 
@@ -40,6 +41,7 @@ https://sketchboard.me/hCqMPzARKFxI#/menushare
 
 ### Backend Models
 
+![alt text](image/models.png)
 
 
 ### Logo
