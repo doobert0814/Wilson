@@ -13,15 +13,23 @@ https://developers.themoviedb.org/3/search/search-companies
 ### Mod5 Requirements
 
 Back-end requirements (Rails):
+
 [ ] Auth
+
 [ ] Multiple has_many_through relationships
+
 [ ] Custom routes 
+
 [ ] Custom controller/model methods
+
 [ ] Validations
 
  Front-end requirements (React):
+
 [ ] Auth
+
 [ ] external api
+
 [ ] Custom CSS
 
 
