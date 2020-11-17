@@ -62,6 +62,8 @@ https://sketchboard.me/hCqMPzARKFxI#/menushare
 [ ] users will be able to connect with a friend
 <!-- will search database for that users credentials -->
 
+[ ] user can remove a friend
+
 [ ] users will be able to click a button to show a randomized movie from the two friends movies selection 
 <!-- compare the two databases and find all that match -->
 
