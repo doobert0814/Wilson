@@ -39,6 +39,13 @@ Back-end requirements (Rails):
 ![alt text](image/sketch.png)
 https://sketchboard.me/hCqMPzARKFxI#/menushare
 
+#### Components:
+App (Will handle state)
+Sidebar
+Content Container
+Header
+Footer
+
 ### Backend Models
 
 ![alt text](image/models.png)
