@@ -56,7 +56,7 @@ https://sketchboard.me/hCqMPzARKFxI#/menushare
 
 [ ] users will be able to view all movies
 
-[ ] users will be able to add movies to favorites :heart:
+[ ] users will be able to add movies to favorites via a :heart:
 <!-- Via a heart icon  -->
 
 [ ] users will be able to connect with a friend
