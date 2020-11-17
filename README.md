@@ -10,11 +10,13 @@ for endpoints and docs refer here:
 
 https://developers.themoviedb.org/3/search/search-companies
 
+Make sure to add: "This product uses the TMDb API but is not endorsed or certified by TDMd."
+
 ### Mod5 Requirements
 
 Back-end requirements (Rails):
 
-- [ ] Auth
+- [ ] Auth JWT
 
 - [ ] Multiple has_many_through relationships
 
