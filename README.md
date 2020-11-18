@@ -54,6 +54,9 @@ Back-end requirements (Rails):
 ![alt text](image/sketch.png)
 https://sketchboard.me/hCqMPzARKFxI#/menushare
 
+### Front End UX
+![alt text](image/uxwilson.png)
+
 
 ### Backend Models
 
