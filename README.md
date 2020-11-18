@@ -48,6 +48,8 @@ Back-end requirements (Rails):
 * Header
 * Footer
 
+*unless Redux is used 
+
 ### Front End Sketch 
 ![alt text](image/sketch.png)
 https://sketchboard.me/hCqMPzARKFxI#/menushare
