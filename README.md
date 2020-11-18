@@ -1,6 +1,6 @@
 # Wilson
 
-Wilson is a web app that allows to users to match on a movie. 
+Wilson is a web app that allows to users to match on a movie. Imagine sitting at home arguing with your housemate over what movie to watch? Well with Wilson you can avoid the fight all together. Just sign in, and start favoriting movies. Whoever you are friends with can match with your movies and painlessly will randomize a movie you both will like. 
 
 ### API
 
@@ -10,7 +10,7 @@ for endpoints and docs refer here:
 
 https://developers.themoviedb.org/3/search/search-companies
 
-Make sure to add: "This product uses the TMDb API but is not endorsed or certified by TDMd."
+Make sure to add: "This product uses the TMDb API but is not endorsed or certified by TDMd." Also their logo from the website.
 
 ### Mod5 Requirements
 
