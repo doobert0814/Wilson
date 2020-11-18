@@ -16,6 +16,7 @@ Make sure to add: "This product uses the TMDb API but is not endorsed or certifi
 * React
 * Auth0
 * Redux? 
+* rails-router 
 
 ### Mod5 Requirements
 
