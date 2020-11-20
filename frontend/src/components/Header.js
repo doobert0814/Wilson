@@ -3,9 +3,9 @@ import React from 'react';
 const Header = () => {
     return (
     <div className="nav-bar">
-        <ul>
-            <li className="nav-item"><h2>Test</h2></li>
-        </ul>
+        <span className="nav-item"><h2>Test</h2>
+        <button class="sign-out-button">sign out</button>
+        </span>
     </div>
     );
 }

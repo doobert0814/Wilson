@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Subheader from './Subheader';
 import MainContainer from './MainContainer'
-const APITOP = 'http://localhost:3000'
+
+const API_KEY = process.env.REACT_APP_API_KEY
+const API_URL = 
+const API = 'http://localhost:3000'
 
 
 class App extends Component {
@@ -10,7 +13,7 @@ class App extends Component {
         movies: []
     }
     componentDidMount () {
-        fetch(APITOP)
+        fetch(API + `/movies`)
             .then( res => res.json())
             .then( movies => this.setState({
                 movies: movies})

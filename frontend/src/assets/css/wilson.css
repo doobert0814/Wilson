@@ -27,6 +27,11 @@
     list-style: none;
     padding: 4px;
 }
+
+.sign-out-button {
+   flex-direction: row;
+}
+
 .main-container {
     background-color: greenyellow;
     display: grid;
