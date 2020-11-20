@@ -4,7 +4,6 @@ import Subheader from './Subheader';
 import MainContainer from './MainContainer'
 
 const API_KEY = process.env.REACT_APP_API_KEY
-const API_URL = 
 const API = 'http://localhost:3000'
 
 
