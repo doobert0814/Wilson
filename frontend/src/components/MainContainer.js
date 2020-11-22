@@ -1,17 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
-import Content from './Content';
+import MovieList from './MovieList';
 
 // greenyellow color 
 class MainContainer extends Component {
     render() {
+      // const { movies } = this.state;
       return (
-        <Fragment>
-          {/* <Search /> */}
           <div className='main-container'>
-            <Content />
+            <MovieList 
+            thingToPassToMovieList={this.props.movie}
+            posterToPassToMovieList={this.props.poster}
+            />
           </div>
-        </Fragment>
       );
     }
   }
