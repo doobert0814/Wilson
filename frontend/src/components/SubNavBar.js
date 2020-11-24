@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Subheader = () => {
+const SubNavBar = () => {
     return (
     <div className="sub-nav-bar">
         <div className="sub-nav-item">
@@ -10,4 +10,4 @@ const Subheader = () => {
     );
 }
 
-export default Subheader;
+export default SubNavBar;
