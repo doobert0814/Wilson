@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from 'semantic-ui-react'
 
 
 const MovieItem = (props) => (
@@ -7,6 +8,7 @@ const MovieItem = (props) => (
         <h2> {props.movie.title}</h2>
         <h2> {props.movie.overview}</h2>
         <h2> {props.movie.release_date}</h2>
+        <Icon name='heart outline' color='grey' size='big'/>
     </div>
 )
 

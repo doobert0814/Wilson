@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
 import './assets/css/wilson.css';
 import App from './components/App';
@@ -8,7 +9,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   
   <React.StrictMode>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 

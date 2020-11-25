@@ -5,11 +5,10 @@ import MovieList from './MovieList';
 // greenyellow color 
 class MainContainer extends Component {
     render() {
-      // const { movies } = this.state;
       return (
           <div className='main-container'>
             <MovieList 
-            thingToPassToMovieList={this.props.movie}
+            thingToPassToMovieList={this.props.movies}
             posterToPassToMovieList={this.props.poster}
             />
           </div>

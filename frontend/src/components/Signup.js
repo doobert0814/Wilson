@@ -1,14 +1,20 @@
 import React, {Component} from 'react'
+import { Redirect } from "react-router-dom";
+// import { useHistory } from 'react-router-dom'
+// import MainContainer from './MainContainer'
 import 'semantic-ui-css/semantic.min.css'
-import {Form, Button, Grid, Header, Segment} from 'semantic-ui-react'
+import {Form, Grid, Header, Segment} from 'semantic-ui-react'
+
+
 
 class Signup extends Component {
+
     state = {
+        redirect: false,
         email: '',
         name: '',
         username: '',
         password: ''
-        // ['password_confirmation']: ''
     }
 
     handleChange = (event) => {
@@ -20,13 +26,23 @@ class Signup extends Component {
         event.preventDefault()
         debugger
         this.props.sheldon(this.state, '/users')
+        this.setRedirectOn()
+    }
+
+    setRedirectOn =() => {
+        this.setState({redirect: true})
     }
 
     render(){
+
+        if (this.state.redirect === true) {
+        return <Redirect to='/main'/>
+        }
+
         return(
             <div>
                 <Grid textAlign='center' verticalAlign='middle'>
-                    <Grid.Column style={{maxWidth: 450}}>
+                    <Grid.Column style={{maxWidth: 475}}>
 
                 <Header as='h2' textAlign='center'>
                     Create Your Account
@@ -54,12 +70,7 @@ class Signup extends Component {
                         fluid placeholder='Password' type='password' name='password' 
                         value={this.state.password} onChange={this.handleChange} id='form-input-password'/><br />
 
-                        {/* <Form.Input 
-                        error={{content: 'Your password doesnt match'}}
-                        fluid placeholder='Confirm Password' type='password' name='password_confirmation' 
-                        value={this.state['password_confirmation']} onChange={this.handleChange} id='form-input-password-confirmation'/><br /> */}
-
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit"/>
 
                     {/* <Button type='submit'>Sign Up</Button> */}
                     {/* <button type='submit' className="ui button">Click Here</button> */}
@@ -68,7 +79,8 @@ class Signup extends Component {
                 </Form>
                     </Grid.Column>
                 </Grid>
-            </div>     
+                
+            </div>   
         )
     }
 }
