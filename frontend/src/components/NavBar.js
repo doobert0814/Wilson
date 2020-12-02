@@ -24,15 +24,12 @@ class Navbar extends React.Component {
                 <Grid padded className='tablet computer only'>
                     <Menu borderless fluid size='large'>
                         <Image src='https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg' size='tiny' circular />
-                            <Header as='h4' textAlign='center'>
-                                Wilson
-                            </Header>
                             <Menu.Menu position='right'>
                                 <NavLink to='/' exact style={link} activeStyle={{background: '#f1f3f3'}} > Home </NavLink>
                             </Menu.Menu>
                                 {this.props.userid ? 
                                 <>
-                            <Menu.Menu position='right'>
+                            <Menu.Menu position='center'>
                                 <NavLink to='/logout' exact style={link} activeStyle={{background: '#f1f3f3'}}> Logout </NavLink>
                             </Menu.Menu>   
                                 </>
@@ -40,6 +37,7 @@ class Navbar extends React.Component {
                                 <>
                             <Menu.Menu position='right'>
                                 <NavLink to='/login' exact style={link} activeStyle={{background: '#f1f3f3'}}> Sign in  </NavLink>
+                                <NavLink to='/logout' exact style={link} activeStyle={{background: '#f1f3f3'}}> Logout </NavLink>
                             </Menu.Menu> 
                                 </>}
                 </Menu>

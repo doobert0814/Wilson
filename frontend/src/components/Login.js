@@ -17,7 +17,7 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        fetch(API + `/users`, {
+        fetch(API + `/login`, {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -25,7 +25,11 @@ class Login extends Component {
             body: JSON.stringify(this.state)
         })
         .then(resp => resp.json())
-        .then(user => this.props.leonard(JSON.parse(user.user)))
+        .then(user => {
+            localStorage.setItem('token', user.jwt)
+            this.props.loginUser(JSON.parse(user.user))
+        })
+        .then(user => console.log({user}))
     }
 
     render(){

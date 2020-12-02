@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Home from './Home'
+import SignupContainer from '../Containers/SignupContainer.js'
+import UserContainer from '../Containers/UserContainer'
 import MainContainer from './MainContainer'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import Login from './Login'
 import Signup from './Signup';
-
+import Play from './Play'
+import Welcome from './Welcome';
+import Friends from './Friends';
 
 
 const API = 'http://localhost:3000'
@@ -16,10 +20,12 @@ class App extends Component {
     constructor() {
         super();
             this.state = {
+                favorites: [],
                 movies: [],
                 posters:[],
                 user: null,
-                userid: null
+                userid: null,
+                isShown: false
             };
         }
 
@@ -27,6 +33,7 @@ class App extends Component {
         fetch(API + `/movies`)
             .then( res => res.json())
             .then( movies => this.setState({ movies: movies.results }))
+            .then(user => this.setState({ user }))
         }
 
     fetchImage = () => {
@@ -34,6 +41,26 @@ class App extends Component {
             .then(res => res.json())
             .then(image => console.log(image))
             
+    }
+
+    // onSubmit = (event) => {
+    // event.preventDefault();
+    // console.log(event);
+    // }
+
+    addToFavorites = (event) => {
+        console.log("I was clicked", event)
+    }
+
+    loginUser = (user) => {
+        console.log("Log in")
+        this.setState({ user })
+    }
+
+    logoutUser =() => {
+        localStorage.removeItem('token')
+        this.setState({user: null})
+        return <Redirect to='/' />
     }
 
 
@@ -66,37 +93,45 @@ class App extends Component {
         return(
             <div className="App">
                 <Router >
-                <NavBar userid={this.state.userid}/>
+                {/* <NavBar user={this.state.user}/> */}
                 <div>
+                    {/* <Route component={Friends}/> */}
+                    
                     <Switch>
-                        <Route exact path='/main' component={() => <MainContainer movies={this.state.movies}/>} />
-                        <Route exact path='/signup' component={() => <Signup sheldon={this.handleSubmit}/>} />
-                        <Route exact path='/' component={Home} />
-                        <Route path='/login' component={() => this.state.user ? <Redirect to="/" /> : <Login loginUser={this.loginUser}/>} />
-                        <Route exact path='/signedin' component={() => <MainContainer movies={this.state.movies}/> }/>
-                        
+                    {/* <Route component={Welcome}/> */}
+                        <Route 
+                            exact path='/main' 
+                            render={() => (
+                            <MainContainer 
+                                addToFavorites={this.addToFavorites()} 
+                                movies={this.state.movies}/>)} />
+{/* 
+                        <Route path='users/:id' component={UserContainer}/>
+                        <Route 
+                            exact path='/signup' 
+                            render={() => (
+                            <Signup 
+                                sheldon={this.handleSubmit}/>)} />
+                        <Route 
+                            exact path='/' 
+                            component={Play} 
+                            />
+                        <Route 
+                            path='/login' 
+                            component={() => 
+                            this.state.user ? 
+                            <Redirect 
+                                to="/" /> : 
+                            <Login 
+                            loginUser={this.loginUser}/>} />
+                        <Route path='/logout' component={() => this.state.user ? this.logoutUser() : <Redirect to="/" />} />    
+                        <Route path='/welcome' component={Welcome} /> */}
                     </Switch>
                 </div>
                 </Router>
             </div>
         )
     }
-
-
-    // render() {
-    //     const { movies, posters } = this.state;
-    //     console.log(movies, posters )
-    //     return (
-    //         <div className="app">
-    //             <NavBar/>
-    //             <Subheader/>
-    //             <MainContainer 
-    //                 movie={movies} 
-    //                 // poster={posters}
-    //             />
-    //         </div>
-    //     );
-    // }
 }
 
 export default App

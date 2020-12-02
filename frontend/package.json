@@ -7,10 +7,16 @@
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "dotenv": "^8.2.0",
+    "focus-trap-react": "^8.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-modal": "^3.12.1",
+    "react-native-divider": "^1.0.3",
+    "react-native-elements": "^3.0.0-alpha.1",
+    "react-native-vector-icons": "^7.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "reactjs-popup": "^2.0.4",
     "semantic-ui-css": "^2.4.1",
     "web-vitals": "^0.2.4"
   },
@@ -37,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1"
   }
 }

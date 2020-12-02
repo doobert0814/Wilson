@@ -33,7 +33,7 @@
 }
 
 .main-container {
-    background-color: greenyellow;
+    background-color:#faf8f6;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 10px;
@@ -41,16 +41,383 @@
     padding: 20px;
 }
 
+a {
+    color: white;
+}
+button.see-faqs {
+    background-color: gray;
+    margin-left: 50px;
+}
+
+div.home-page {
+    background-color: lightgray;
+}
+
+.ui.large.borderless.fluid.menu {
+    background-color: lightgray;
+    margin-top: 25px;
+}
+
+h2 {
+    margin-top: 75px;
+    margin-left: 50px;
+}
+
+div .body {
+    margin-top: 30px;
+}
+
+div .sub-body {
+    margin-top: 30px;
+}
+
+.ui.image {
+    margin-left: 50px;
+}
+
+p span{
+    font-size: 14pt;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 50px;
+    margin-right: 0;
+    background-color: gray;
+    color: black;
+}
+
 .content {
+    
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     padding: 20px;
-    background-color: blue;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+  }
+
+  /* ----------- */
+
+
+body {
+    margin: 0;
+    background-color: #faf8f6;
+    /* background-image: url(https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg); */
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: auto;
+}
+
+.container {
+    width: auto;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+nav .logo {
+    float: left;
+    font-size: 17px;
+    color: white;
+    padding: 15px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+
+.logo img{
+    border-radius: 5px;
+    width: 120px;
+    height: 100px;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin: 0 5px;
+    font-size: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+nav ul li a {
+    font-size: x-small;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    border-width: 1.5px;
+    border-color: grey;
+    border-radius: 10%;
+    border-style: solid;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+}
+
+.deskripsi .sign-up {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: x-small;
+    background-color: gray;
+    color: white;
+    border-width: 1.5px;
+    border-color: grey;
+    border-radius: 10%;
+    border-style: solid;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    /* margin: 0 5px; */
+    /* text-transform: uppercase; */
+    border-radius: 6px;
+    text-align: center;
+    margin-right: 800px;
+}
+
+.deskripsi {
+    position: relative;
+    /* width:45%; */
+    height: 68% ;
+    top: 200px;
+    left: 20px;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.deskripsi i:hover{
+    opacity: 1;
+}
+
+.deskripsi i{
+    position: relative;
+    bottom: 0;
+    color: white;
+    opacity: .5;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.deskripsi h2 {
+    font-weight: bold;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    color: gray;
+    font-size: 50px;
+    margin: 0 500px 10px 0;
+}
+
+.deskripsi p {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    line-height: 30px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-right: 100px;
+}
+
+.ui.center.aligned.header {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 145px;
+}
+
+.signup-form{
+    border-color: none;
+    border-style: none;
+}
+
+div.ui.stacked.segment{
+    border-color: none;
+    border-style: none;
+}
+
+.sign-up-button {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: medium;
+    background-color: gray;
+    color: white;
+    border-width: 1.5px;
+    border-color: grey;
+    border-style: solid;
+    padding: 10px 20px;
+}
+
+.cancel-button, .sign-up-button {
+    display: inline-block;
+    text-align: center;
+}
+
+.cancel-button {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: medium;
+    padding: 10px 20px;
+    border-style: none;
+    background: none;
+    margin: 20px 0;
+}
+
+div.genres ul {
+    list-style: none;
+}
+
+div.genres ul li {
+    display: inline-flex;
+    margin: 0 5px;
+    font-size: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.deskripsi h4 {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    padding: 20px 0 20px 0;
+    margin-right: 425px;
+}
+
+h2.ui.header{
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.genres ul li a {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    border-width: 1.5px;
+    border-color: grey;
+    background-color: lightgray;
+    border-radius: 48%;
+    border-style: solid;
+    text-decoration: none;
+    color: black;
+    padding: 20px 40px 20px 40px;
+}
+
+.find-friend-form {
+    
+}
+
+.add-friend-button {
+    margin-right: 545px;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: medium;
+    background-color: gray;
+    color: white;
+    border-width: 1.5px;
+    border-color: grey;
+    border-style: solid;
+    padding: 10px 20px;
+}
+
+.add-friend-button, #form-input {
+    display: inline-block;
+}
+
+#form-input {
+    margin-right: 400px;
+    margin-left: 103px;
+}
+
+div.genres:hover {
+    border-width: 5px;
+    /* overflow: hidden; */
+}
+
+div.bottom {
+    margin-top: 45px;
+    padding: 10px 0;
+    background-color:#d3d3d3;
+
+
+}
+
+button.add-friends {
+    display: inline-block;
+    float: right;
+    margin-right: 545px;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: medium;
+    background-color: gray;
+    color: white;
+    border-width: 1.5px;
+    border-color: grey;
+    border-style: solid;
+    padding: 10px 20px;
+}
+
+button.to-movies {
+    margin-right: 500px;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+    font-size: medium;
+    background-color: gray;
+    color: white;
+    border-width: 1.5px;
+    border-color: grey;
+    border-style: solid;
+    padding: 10px 20px;
+}
+
+.deskripsi.find-friend-form {
+    display: inline-block;
+}
+
+.deskripsi.header h4 {
+    margin-right: 425px;
+}
+
+.ui.card {
+    background-color: lightgray;
+
+}
+
+
+/* -------------------------- */
+
+
+modal {
+    font-size: 12px;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
   }

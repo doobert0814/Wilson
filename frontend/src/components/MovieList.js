@@ -1,6 +1,6 @@
 import React from 'react';
-import {Image, Grid, Menu} from 'semantic-ui-react'
-import MovieItem from './MovieItem'
+import {Card} from 'semantic-ui-react'
+// import MovieItem from './MovieItem'
 
 const MovieList = (props) => {
 
@@ -8,7 +8,14 @@ const MovieList = (props) => {
     
         <div className='content'>
             {props.thingToPassToMovieList.map(movie =>
-                <MovieItem movie={movie} key={movie.id}/> )}
+                    <Card 
+                        onClick={() => this.addToFavorites}
+                        key={movie.id}
+                        // href='#card-example-link-card'
+                        header={movie.title}
+                        description={movie.overview}
+                    />
+                    )}
         </div>
     );
 }
