@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
+import { Icon } from 'semantic-ui-react';
+import { Link, Redirect } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 import MovieList from './MovieList';
+import Friends from './Friends';
 
-// greenyellow color 
+
+
 class MainContainer extends Component {
+
+  
+
+
+  handleClick (){
+    // history.push("/friends")
+    console.log("users clicked")
+  }
+
+  
+
     render() {
       return (
           <div className='main-container'>
             <nav>
-                <div class="logo">
+                <div className="logo">
                 <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
                 </div>
                 <ul>
+                    
+                <Icon link onClick={this.handleClick} className='users-icon' size={"large"} name={'users'}></Icon>
+                    
+                    
+                <Icon className='search-icon' size={"large"} name={'search'} />
+                
                     <li><a href="#">Sign out</a></li>
                 </ul>
             </nav>
@@ -29,7 +51,7 @@ class MainContainer extends Component {
                 <div className="movie-list">
                     <ul>
                     <MovieList 
-                      addToFavorites={this.props.addToFavorites}
+                      addToFavorites={this.props.favorites}
                       thingToPassToMovieList={this.props.movies}
                       posterToPassToMovieList={this.props.poster}
                     />

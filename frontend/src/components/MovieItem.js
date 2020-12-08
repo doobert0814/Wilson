@@ -1,14 +1,14 @@
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
+
+const PHOTOAPI = 'https://image.tmdb.org/t/p/w300'
 
 
 const MovieItem = (props) => (
     <div>
-        <img src={props.movie.poster_path} alt="Movie Poster" width="250" height="245"/>
+        <img src={PHOTOAPI + props.movie.poster_path} alt={movie.title}></img>
         <h2> {props.movie.title}</h2>
         <h2> {props.movie.overview}</h2>
         <h2> {props.movie.release_date}</h2>
-        <Icon name='heart outline' color='grey' size='big' onClick={console.log('Hi')}/>
     </div>
 )
 

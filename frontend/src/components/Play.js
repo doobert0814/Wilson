@@ -39,7 +39,7 @@ handleClose = () => {
                     <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
                 </div>
                 <ul>
-                    <li><a href="#">Sign in</a></li>
+                    <li><a href="/login">Sign in</a></li>
                 </ul>
             </nav> 
             <div className="deskripsi">
@@ -52,8 +52,14 @@ handleClose = () => {
                 <p><span>Well with Wilson you can avoid the fight all together. Just sign in, and start favoriting movies.</span></p>
                 <p><span>Whoever you are friends with can match with your movies and painlessly will randomize a movie you both will like.</span></p>
                 <ul>
-                <Popup trigger={<button className="sign-up"> Sign up </button>} content={<button onClick={this.handleClose}>click to close</button>} modal>
-                    <span> <Signup /></span>
+                <Popup trigger={<button className="sign-up"> Sign up </button>} content={<button onClick={this.handleClose}>click to close</button>} nested modal>
+                {close => (
+                    <div className="modal">
+                    <button className="close" onClick={close}>
+                        &times;
+                    </button>
+                    
+                    <span> <Signup /></span></div>)}
                 </Popup>
                 </ul>
                 <a href="#genre-movie"><i class="fa fa-angle-double-down"></i></a>

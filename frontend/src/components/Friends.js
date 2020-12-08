@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import SignupForm from './SignupForm'
-import Signup from './Signup'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {Button, Icon, Form, Container, Grid, Header, Image, Segment} from 'semantic-ui-react'
+
+
 
 class Friends extends Component {
 
@@ -19,12 +19,34 @@ class Friends extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
         debugger
-        this.props.sheldon(this.state, '/users')
-        // this.setRedirectOn()
+        this.findFriends()
     }
-   
+
+    findFriends = (event) => {
+        fetch(`http://localhost:3000/user?email=${this.state.email}&username=${this.state.username}` , {
+            method: 'GET', 
+            headers: {
+
+                'Content-Type':'application/json',
+                'Accept': 'application/json'
+
+            }
+        })
+        .then(res => res.json())
+        .then(user => console.log(user))
+        debugger
+    }
+
+    // Object.keys(this.state.email).map(function (key) {
+    //     let item = this.state.email[key]
+
+    // {user.map(user => user.includes('J')).map(filteredName => (
+    //     <li>
+    //       {filteredName}
+    //     </li>
+    //   ))}
+
 
     render(){
         
@@ -35,7 +57,7 @@ class Friends extends Component {
                     <Icon name={'chevron left'} color={"black"} link="/welcome"/>
                 </div>
                 <ul>
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="/logout">Sign out</a></li>
                 </ul>
             </nav> 
             <div className="deskripsi">
@@ -44,7 +66,7 @@ class Friends extends Component {
                 </div>
                 
                 <div className="find-friend-form">
-                    <Form >
+                    <Form className='signup-form' onSubmit={(event) => this.findFriends(event)}>
                         <Form.Input
                         fluid placeholder = "Username or email" type='text' name='email' 
                         value={this.state.email} onChange={this.handleChange} id='form-input'/><br />
@@ -57,7 +79,7 @@ class Friends extends Component {
                     </ul>
                 </div>
                 <div className="bottom">
-                <button className="to-movies" type="submit" value="Done, take me to movies">Done, take me to movies</button>
+                <Link to="/main"><button className="to-movies" type="button" value="Done, take me to movies">Done, take me to movies</button></Link>
                 </div>
             </div>
         </div> 

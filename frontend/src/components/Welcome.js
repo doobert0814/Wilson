@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import RandomMovie from '../Containers/RandomMovie'
+import { Link } from 'react-router-dom'
 // import { Divider } from 'react-native-elements';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
@@ -15,18 +17,14 @@ class Welcome extends Component{
     
 
     this.state= {
-        showForm: false
+        user: ''
     };
 
 }
 
-handleOpen = () => {
-    this.setState({ showForm: true });
-}
-
-handleClose = () => {
-    this.setState({ showForm: false });
-}
+    shuffle() {
+        debugger
+    }
 
 // onclick(){
 //     this.setState({showForm: true})
@@ -43,7 +41,7 @@ handleClose = () => {
                     <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
                 </div>
                 <ul>
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="/logout">Sign out</a></li>
                 </ul>
             </nav> 
             <div className="deskripsi">
@@ -70,12 +68,12 @@ handleClose = () => {
 
                 <div className="genres">
                     <ul>
-                        <li><a href="#">Watch random movie</a></li>
+                        <li><a href="/shuffle">Watch random movie</a></li>
                     </ul>
                 </div>
 
                 <div className="bottom">
-                <button className="add-friends" type="submit" value="Done, add friends">Done, add friends</button>
+                <Link to="/friends"> <button className="add-friends" type="button">Done, add friends</button></Link>
 
                 </div>
 

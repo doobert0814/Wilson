@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Home from './Home'
-import SignupContainer from '../Containers/SignupContainer.js'
 import UserContainer from '../Containers/UserContainer'
 import MainContainer from './MainContainer'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
@@ -10,6 +9,7 @@ import Signup from './Signup';
 import Play from './Play'
 import Welcome from './Welcome';
 import Friends from './Friends';
+import RandomMovie from '../Containers/RandomMovie';
 
 
 const API = 'http://localhost:3000'
@@ -36,26 +36,29 @@ class App extends Component {
             .then(user => this.setState({ user }))
         }
 
-    fetchImage = () => {
-        fetch(API + `/movie/${this.state.movies.results.id}/images`)
-            .then(res => res.json())
-            .then(image => console.log(image))
-            
-    }
-
     // onSubmit = (event) => {
     // event.preventDefault();
     // console.log(event);
     // }
 
     addToFavorites = (event) => {
-        console.log("I was clicked", event)
+        console.log("Add to favorites")
     }
 
-    loginUser = (user) => {
-        console.log("Log in")
-        this.setState({ user })
-    }
+    // loginUser = (user) => {
+    //     console.log("Log in")
+    //     const token = localStorage.getItem('token')
+    //     if(token) {
+    //         fetch(API + '/user' ,{
+    //             method: 'GET',
+    //             headers: {
+    //                 'Authorization':`Bearer ${token}`
+    //             }
+    //         })
+    //         .then(resp => resp.json())
+    //         .then(user => this.setState({user}))
+    //     }
+    // }
 
     logoutUser =() => {
         localStorage.removeItem('token')
@@ -66,6 +69,7 @@ class App extends Component {
 
     handleSubmit = (event) => {
         console.log('Hi', event)
+        debugger
         fetch(API + `/users`, {
             method: 'POST',
             headers: {
@@ -80,7 +84,7 @@ class App extends Component {
         //     localStorage.setItem('token', data.jwt)
         // })
         .then(user => console.log(user))
-        // .then(user => {this.setState({userid: user.id, user: user})})
+        .then(user => {this.setState({userid: user.id, user: user})})
     }
 
     filteredMovies = () => {
@@ -95,23 +99,38 @@ class App extends Component {
                 <Router >
                 {/* <NavBar user={this.state.user}/> */}
                 <div>
-                    {/* <Route component={Friends}/> */}
-                    
                     <Switch>
-                    {/* <Route component={Welcome}/> */}
+                        <Route 
+                            exact path='/friends' 
+                            component={Friends}
+                        /> 
+                        <Redirect 
+                            path='/friends'
+                            component={Friends}
+                        />
                         <Route 
                             exact path='/main' 
                             render={() => (
                             <MainContainer 
-                                addToFavorites={this.addToFavorites()} 
-                                movies={this.state.movies}/>)} />
-{/* 
-                        <Route path='users/:id' component={UserContainer}/>
+                                addToFavorites={this.state.favorites} 
+                                movies={this.state.movies}/>)} 
+                        />
+                        <Route 
+                        path='users/:id' 
+                        component={UserContainer}
+                        />
+                        <Route 
+                        path='/shuffle' 
+                        render={() => (
+                            <RandomMovie 
+                            movies={this.state.movies}/>)} 
+                        />
                         <Route 
                             exact path='/signup' 
                             render={() => (
                             <Signup 
-                                sheldon={this.handleSubmit}/>)} />
+                                sheldon={this.handleSubmit}/>)} 
+                        />
                         <Route 
                             exact path='/' 
                             component={Play} 
@@ -124,8 +143,15 @@ class App extends Component {
                                 to="/" /> : 
                             <Login 
                             loginUser={this.loginUser}/>} />
-                        <Route path='/logout' component={() => this.state.user ? this.logoutUser() : <Redirect to="/" />} />    
-                        <Route path='/welcome' component={Welcome} /> */}
+                        <Route 
+                            path='/logout' 
+                            component={() => this.state.user ? this.logoutUser() : 
+                        <Redirect to="/" />} 
+                        />    
+                        <Route 
+                            path='/welcome' 
+                            render={() => (<Welcome movies={this.state.movies}/>)}
+                        />
                     </Switch>
                 </div>
                 </Router>

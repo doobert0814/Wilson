@@ -150,7 +150,7 @@ nav ul {
     margin-right: 30px;
 }
 
-nav ul li {
+nav ul li, .user-icon {
     display: inline-flex;
     margin: 0 5px;
     font-size: 15px;
@@ -307,10 +307,6 @@ div.genres ul li a {
     padding: 20px 40px 20px 40px;
 }
 
-.find-friend-form {
-    
-}
-
 .add-friend-button {
     margin-right: 545px;
     font-family: 'Chalkduster', fantasy, sans-serif;
@@ -339,15 +335,21 @@ div.genres:hover {
 
 div.bottom {
     margin-top: 45px;
-    padding: 10px 0;
+    padding: 10px 0 50px;
     background-color:#d3d3d3;
+}
 
+i.users.large.link.icon.users-icon {
+    visibility: visible;
+}
 
+div.ui.inverted.button {
+  background-color: #d3d3d3;
+  color: black;
 }
 
 button.add-friends {
     display: inline-block;
-    float: right;
     margin-right: 545px;
     font-family: 'Chalkduster', fantasy, sans-serif;
     font-size: medium;
@@ -384,11 +386,35 @@ button.to-movies {
 
 }
 
+div.header {
+    background: none;
+}
+
+button.add-to-favorites-button {
+    background-color: #d3d3d3;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+}
+
+div.movie-card-bottom{
+    background: #faf8f6;
+    font-family: 'Chalkduster', fantasy, sans-serif;
+}
+
+i.heart.outline.icon {
+    position: absolute;
+    margin-bottom: 50px;
+    margin-right: 30px;
+}
+
+i.heart.outline.icon:visited, i.heart.outline.icon:active {
+    color: red;
+}
+
 
 /* -------------------------- */
 
 
-modal {
+.modal {
     font-size: 12px;
   }
   .modal > .header {
