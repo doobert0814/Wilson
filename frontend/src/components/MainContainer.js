@@ -33,8 +33,6 @@ class MainContainer extends Component {
                 <Icon link className='users-icon' size={"large"} name={'users'}></Icon>
                 </Menu.Item> 
                 
-                    
-                    
                 <Icon className='search-icon' size={"large"} name={'search'} />
                 
                     <li><a href="/logout">Sign out</a></li>
