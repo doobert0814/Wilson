@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import 'reactjs-popup/dist/index.css';
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 import {Link} from 'react-router-dom'
-import {Button, Icon, Form, Container, Grid, Header, Image, Segment} from 'semantic-ui-react'
+import {Icon, Form} from 'semantic-ui-react'
 
 
 
@@ -53,7 +53,7 @@ class Friends extends Component {
     return(
         <div className="container">
             <nav>
-                <div class="logo">
+                <div className="logo">
                     <Icon name={'chevron left'} color={"black"} link="/welcome"/>
                 </div>
                 <ul>

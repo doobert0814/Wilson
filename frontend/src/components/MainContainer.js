@@ -1,40 +1,43 @@
 import React, { Component } from 'react';
-import { Icon } from 'semantic-ui-react';
-import { Link, Redirect } from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import { Icon, Menu, Popup } from 'semantic-ui-react';
+import { Redirect, Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import MovieList from './MovieList';
-import Friends from './Friends';
+// import Friends from './Friends';
 
 
 
 class MainContainer extends Component {
 
-  
-
-
-  handleClick (){
-    // history.push("/friends")
-    console.log("users clicked")
+  state = {
+    redirect: null
   }
 
   
 
     render() {
+
+      if (this.state.redirect) {
+        return <Redirect to={this.state.redirect}/>
+        }
+
       return (
           <div className='main-container'>
             <nav>
                 <div className="logo">
-                <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
+                <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg" alt="wilson-football"></img></a>
                 </div>
-                <ul>
-                    
-                <Icon link onClick={this.handleClick} className='users-icon' size={"large"} name={'users'}></Icon>
+                <ul className="nav-top-right">
+                <Menu.Item as={ Link } to='/friends'>
+                <Icon link className='users-icon' size={"large"} name={'users'}></Icon>
+                </Menu.Item> 
+                
                     
                     
                 <Icon className='search-icon' size={"large"} name={'search'} />
                 
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="/logout">Sign out</a></li>
                 </ul>
             </nav>
 

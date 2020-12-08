@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import Home from './Home'
 import UserContainer from '../Containers/UserContainer'
 import MainContainer from './MainContainer'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
@@ -75,14 +73,10 @@ class App extends Component {
             headers: {
                 'Content-Type':'application/json',
                 'Accept': 'application/json',
-                // Authorization: `Bearer <token>`
             },
             body:JSON.stringify({user: event})
         })
         .then(res => res.json())
-        // .then(data => {
-        //     localStorage.setItem('token', data.jwt)
-        // })
         .then(user => console.log(user))
         .then(user => {this.setState({userid: user.id, user: user})})
     }
@@ -92,11 +86,11 @@ class App extends Component {
     }
 
     render(){
-        const { movies, posters } = this.state;
+        const { movies } = this.state;
         console.log(movies)
         return(
             <div className="App">
-                <Router >
+                <Router>
                 {/* <NavBar user={this.state.user}/> */}
                 <div>
                     <Switch>

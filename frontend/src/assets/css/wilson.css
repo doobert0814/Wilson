@@ -339,8 +339,9 @@ div.bottom {
     background-color:#d3d3d3;
 }
 
-i.users.large.link.icon.users-icon {
-    visibility: visible;
+i.users.large.link.icon.users-icon::before {
+    color: black;
+    margin-right: 10px;
 }
 
 div.ui.inverted.button {
