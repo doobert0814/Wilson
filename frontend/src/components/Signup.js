@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { useState, useEffect } from 'react'
-import { useFetch } from './hooks'
 import ReactDOM from 'react-dom'
 import { Redirect } from "react-router-dom";
 import { useHistory } from 'react-router-dom'

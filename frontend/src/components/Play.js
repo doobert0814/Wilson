@@ -35,7 +35,7 @@ handleClose = () => {
     return(
         <div className="container">
             <nav>
-                <div class="logo">
+                <div className="logo">
                     <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
                 </div>
                 <ul>

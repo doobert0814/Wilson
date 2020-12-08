@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import 'reactjs-popup/dist/index.css';
-// import Popup from 'reactjs-popup';
 import {Link} from 'react-router-dom'
-import {Icon, Form} from 'semantic-ui-react'
+import {Icon, Form, Menu} from 'semantic-ui-react'
 
 
 
@@ -38,15 +37,6 @@ class Friends extends Component {
         debugger
     }
 
-    // Object.keys(this.state.email).map(function (key) {
-    //     let item = this.state.email[key]
-
-    // {user.map(user => user.includes('J')).map(filteredName => (
-    //     <li>
-    //       {filteredName}
-    //     </li>
-    //   ))}
-
 
     render(){
         
@@ -54,7 +44,10 @@ class Friends extends Component {
         <div className="container">
             <nav>
                 <div className="logo">
-                    <Icon name={'chevron left'} color={"black"} link="/welcome"/>
+                <Menu.Item as={ Link } to='/welcome'>
+                <Icon link className='users-icon' color={"black"}size={"large"} name={'chevron left'}></Icon>
+                </Menu.Item> 
+                    {/* <Icon name={'chevron left'} color={"black"} link="/welcome"/> */}
                 </div>
                 <ul>
                     <li><a href="/logout">Sign out</a></li>

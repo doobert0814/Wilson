@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 import React, { useState, useEffect, useCallback } from 'react';
+// eslint-disable-next-line
 import MovieList from '../components/MovieList'
 
 function RandomMovie() {

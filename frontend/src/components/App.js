@@ -98,10 +98,6 @@ class App extends Component {
                             exact path='/friends' 
                             component={Friends}
                         /> 
-                        <Redirect 
-                            path='/friends'
-                            component={Friends}
-                        />
                         <Route 
                             exact path='/main' 
                             render={() => (
