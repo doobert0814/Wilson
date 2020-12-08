@@ -8,17 +8,15 @@ import {Icon, Form, Menu} from 'semantic-ui-react'
 class Friends extends Component {
 
     state = {
-        email: '',
-        username: ''
+        email: [],
+        username: []
     }
 
     handleChange = (event) => {
-        console.log(event.target)
             this.setState({[event.target.name]: event.target.value})
     }
 
     handleSubmit = (event) => {
-        debugger
         this.findFriends()
     }
 
@@ -34,7 +32,6 @@ class Friends extends Component {
         })
         .then(res => res.json())
         .then(user => console.log(user))
-        debugger
     }
 
 
@@ -47,7 +44,6 @@ class Friends extends Component {
                 <Menu.Item as={ Link } to='/welcome'>
                 <Icon link className='users-icon' color={"black"}size={"large"} name={'chevron left'}></Icon>
                 </Menu.Item> 
-                    {/* <Icon name={'chevron left'} color={"black"} link="/welcome"/> */}
                 </div>
                 <ul>
                     <li><a href="/logout">Sign out</a></li>
@@ -67,8 +63,9 @@ class Friends extends Component {
                         <button className="add-friend-button" type="submit" value="Add">Add</button>
                     </Form>
                 </div>
-                <div className="genres">
+                <div className="friends-list">
                     <ul>
+                        <li>{this.state.email}</li>
                     </ul>
                 </div>
                 <div className="bottom">

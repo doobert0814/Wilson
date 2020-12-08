@@ -349,6 +349,15 @@ div.ui.inverted.button {
   color: black;
 }
 
+.friends-list ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.friends-list li {
+    font-family: 'Chalkduster', fantasy, sans-serif;
+}
+
 button.add-friends {
     display: inline-block;
     margin-right: 545px;

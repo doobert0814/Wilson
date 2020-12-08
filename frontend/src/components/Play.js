@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import SignupForm from './SignupForm'
 import Signup from './Signup'
-// import {Link} from 'react-router-dom'
-import {Button, Form, Container, Grid, Header, Image, Segment} from 'semantic-ui-react'
+
 class Play extends Component{
     constructor(props){
         super(props)
@@ -23,11 +21,6 @@ handleOpen = () => {
 handleClose = () => {
     this.setState({ showForm: false });
 }
-
-// onclick(){
-//     this.setState({showForm: true})
-//     // console.log(showForm)
-// }
 
 
     render(){
@@ -62,7 +55,7 @@ handleClose = () => {
                     <span> <Signup /></span></div>)}
                 </Popup>
                 </ul>
-                <a href="#genre-movie"><i class="fa fa-angle-double-down"></i></a>
+                <a href="#genre-movie"><i className="fa fa-angle-double-down"></i></a>
             </div>
         </div> 
     )

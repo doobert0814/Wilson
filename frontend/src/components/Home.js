@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import {Button, Container, Grid, Header, Image, Segment} from 'semantic-ui-react'
+
+
 const Home = () => {
 
     return(

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, Menu, Popup } from 'semantic-ui-react';
+import { Icon, Menu } from 'semantic-ui-react';
 import { Redirect, Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
-
 import MovieList from './MovieList';
-// import Friends from './Friends';
-
 
 
 class MainContainer extends Component {
@@ -13,8 +9,6 @@ class MainContainer extends Component {
   state = {
     redirect: null
   }
-
-  
 
     render() {
 

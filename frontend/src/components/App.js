@@ -34,15 +34,6 @@ class App extends Component {
             .then(user => this.setState({ user }))
         }
 
-    // onSubmit = (event) => {
-    // event.preventDefault();
-    // console.log(event);
-    // }
-
-    addToFavorites = (event) => {
-        console.log("Add to favorites")
-    }
-
     // loginUser = (user) => {
     //     console.log("Log in")
     //     const token = localStorage.getItem('token')
@@ -66,8 +57,6 @@ class App extends Component {
 
 
     handleSubmit = (event) => {
-        console.log('Hi', event)
-        debugger
         fetch(API + `/users`, {
             method: 'POST',
             headers: {
@@ -87,7 +76,6 @@ class App extends Component {
 
     render(){
         const { movies } = this.state;
-        console.log(movies)
         return(
             <div className="App">
                 <Router>

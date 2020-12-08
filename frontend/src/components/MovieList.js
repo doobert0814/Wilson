@@ -3,14 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 const PHOTOAPI = 'https://image.tmdb.org/t/p/w300'
 
-
-function handleSubmit(e) {
-    console.log("Add to Favorites!", e)
-}
-
 function MovieList(props) {
 
-    const [favorites, setFavorites, redirect, setRedirect] = useState([])
+    const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
         let token = localStorage.getItem('token')
@@ -24,29 +19,14 @@ function MovieList(props) {
     .then(res => res.json())
     .then(favorite => setFavorites(favorite))}, [])
 
-    
-
-    const handleClick = (movie) => {
-        console.log(movie)
-        handleSubmit(movie)
-    
-    }
-
-    const handleRemoveClick = (event) => {
-            console.log(event)
-            debugger
-    }
-
     const removeFavorite = (movie) => {
+        console.log(movie)
         let array= [...favorites]
-        let index= array.indexOf(movie)
-        debugger
-        if (index !== -1) {
-            let arr = array.splice(index, 1)
-            setFavorites({arr})
-        }
+        setFavorites(array.filter(fav => fav.title !== movie.title ))
+        let fav = favorites.find(fav => fav.title === movie.title)
+
         let token = localStorage.getItem('token')
-        fetch('http://localhost:3000/favorites/', {
+        fetch(`http://localhost:3000/favorites/${fav.id}`, {
             
             method: 'DELETE', 
             headers:{
@@ -57,7 +37,7 @@ function MovieList(props) {
         .then(res => res.json())
     }
 
-    handleSubmit = (movie) => {
+    const handleSubmit = (movie) => {
         let token = localStorage.getItem('token')
         fetch('http://localhost:3000/favorites', {
             method: 'POST',
@@ -73,7 +53,7 @@ function MovieList(props) {
     }
 
     console.log(favorites)
-    console.log(props.thingToPassToMovieList)
+    
     return (
 
         <div className='content'>
@@ -85,7 +65,7 @@ function MovieList(props) {
                         <div className="ui card">
                     
 
-                        {favorites.some(f => f.title === movie.title) ? <button onClick={() => removeFavorite(movie)} className="add-to-favorites-button">remove from favorites</button> : <button onClick={() => handleClick(movie)} className="add-to-favorites-button">add to favorites</button>}
+                        {favorites.some(f => f.title === movie.title) ? <button onClick={() => removeFavorite(movie)} className="add-to-favorites-button">remove from favorites</button> : <button onClick={() => handleSubmit(movie)} className="add-to-favorites-button">add to favorites</button>}
 
                         
                             <img src={PHOTOAPI + movie.poster_path} alt={movie.title}></img>

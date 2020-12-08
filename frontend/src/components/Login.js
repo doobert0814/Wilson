@@ -3,8 +3,6 @@ import {Form, Grid, Header, Segment} from 'semantic-ui-react'
 
 const API = 'http://localhost:3000'
 
-
-
 class Login extends Component {
     state = {
         email: '',

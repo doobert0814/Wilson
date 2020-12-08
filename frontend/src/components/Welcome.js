@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
-import RandomMovie from '../Containers/RandomMovie'
 import { Link } from 'react-router-dom'
-// import { Divider } from 'react-native-elements';
 import 'reactjs-popup/dist/index.css';
-import Popup from 'reactjs-popup';
-import SignupForm from './SignupForm'
-import Signup from './Signup'
-// import {Link} from 'react-router-dom'
 import {Divider, Header } from 'semantic-ui-react'
-
 
 
 class Welcome extends Component{
@@ -33,12 +26,11 @@ class Welcome extends Component{
 
 
     render(){
-        const { showForm } = this.state;
     return(
         <div className="container">
             <nav>
-                <div class="logo">
-                    <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg"></img></a>
+                <div className="logo">
+                    <a href="index.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81BmC6vWSJL._AC_SX679_.jpg" alt="logo"></img></a>
                 </div>
                 <ul>
                     <li><a href="/logout">Sign out</a></li>
@@ -57,7 +49,7 @@ class Welcome extends Component{
                         <li><a href="#review-movie">Action</a></li>
                         <li><a href="#watch-movie">Drama</a></li>
                         <li><a href="#genre-movie">Romance</a></li>
-                        <li><a href="#">Crime</a></li>
+                        <li><a href="#crime">Crime</a></li>
                     </ul>
                 </div>
                 <Divider horizontal style={{color: 'grey'}}>
@@ -77,7 +69,7 @@ class Welcome extends Component{
 
                 </div>
 
-                    <a href="#genre-movie"><i class="fa fa-angle-double-down"></i></a>
+                    <a href="#genre-movie"><i className="fa fa-angle-double-down"></i></a>
             </div>
         </div> 
     )
